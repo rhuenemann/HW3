@@ -16,18 +16,37 @@
         double rate = Integer.parseInt(request.getParameter("rate"));
         double pre = Integer.parseInt(request.getParameter("pre"));
         double post = Integer.parseInt(request.getParameter("post"));
-        double hoursover = hours - 40;
-        double rateover = rate * 1.5;
-        double tax;
-        double gross = ((hours-hoursover)*rate)+(hoursover*rateover);
-        if (gross>500){
-            tax = 0.18;
+        double taxablePay;
+        double reghours = 40;
+        double otHours;
+        double otPayRate;
+        double otPay;
+        double taxAmount;
+        double postTaxPay;
+        double netpay;
+        double gross;
+        otHours = hours -40;
+        otPayRate = rate *1.5;
+        if (hours > 40) {
+            otPay = otHours * otPayRate;
+            rate = reghours * rate;
+            gross = rate + otPay;
         }
-        else{
-            tax = 0.22;
+        else {
+            gross = hours * rate;
         }
-        double postTaxpay = gross*( 1 + tax);
-        double netpay = postTaxpay-post;
+        taxablePay = gross - pre;
+        
+        if (gross<500){
+            taxAmount = taxablePay * .18;   
+        }
+        else {
+            taxAmount = taxablePay * .22;
+        }
+        postTaxPay = taxablePay - taxAmount;
+        
+        netpay = postTaxPay - post;
+            
         %>
     
 
@@ -47,11 +66,11 @@
                 </tr>
                 <tr>
                     <td># Hours Overtime: </td>
-                    <td><%= hoursover %></td>
+                    <td><%= otHours %></td>
                 </tr>
                 <tr>
                     <td>Overtime Hourly Rate: </td>
-                    <td><%= rateover %></td>
+                    <td><%= otPayRate %></td>
                 </tr>
                 <tr>
                     <td>Gross Pay: </td>
@@ -63,11 +82,11 @@
                 </tr>
                 <tr>
                     <td>Tax Amount: </td>
-                    <td><%= tax %></td>
+                    <td><%= taxAmount %></td>
                 </tr>
                 <tr>
                     <td>Post-tax Pay: </td>
-                    <td><%= postTaxpay %></td>
+                    <td><%= postTaxPay %></td>
                 </tr>
                 <tr>
                     <td>Post-tax Deduct: </td>
