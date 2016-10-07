@@ -36,43 +36,43 @@
         <table border="1">
             <tbody>
                 <tr>
-                    <td>Total Hours Worked:</td>
+                    <td>Total Hours Worked: </td>
                     <td><%= hours %></td>
                 </tr>
                 <tr>
-                    <td>Hourly Rate:</td>
+                    <td>Hourly Rate: </td>
                     <td><%= rate %></td>
                 </tr>
                 <tr>
-                    <td># Hours Overtime:</td>
+                    <td># Hours Overtime: </td>
                     <td><%= hoursover %></td>
                 </tr>
                 <tr>
-                    <td>Overtime Hourly Rate:</td>
+                    <td>Overtime Hourly Rate: </td>
                     <td><%= rateover %></td>
                 </tr>
                 <tr>
-                    <td>Gross Pay:</td>
+                    <td>Gross Pay: </td>
                     <td><%= gross %></td>
                 </tr>
                 <tr>
-                    <td>Pre-tax Deduct:</td>
+                    <td>Pre-tax Deduct: </td>
                     <td><%= pre %></td>
                 </tr>
                 <tr>
-                    <td>Tax Amount:</td>
+                    <td>Tax Amount: </td>
                     <td><%= tax %></td>
                 </tr>
                 <tr>
-                    <td>Post-tax Pay:</td>
+                    <td>Post-tax Pay: </td>
                     <td><%= postTaxpay %></td>
                 </tr>
                 <tr>
-                    <td>Post-tax Deduct:</td>
+                    <td>Post-tax Deduct: </td>
                     <td><%= post %></td>
                 </tr>
                 <tr>
-                    <td>Net Pay:</td>
+                    <td>Net Pay: </td>
                     <td><%= netpay %></td>
                 </tr>
 
